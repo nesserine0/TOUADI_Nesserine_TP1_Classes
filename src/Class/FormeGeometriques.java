@@ -2,7 +2,7 @@ package Class;
 public abstract class FormeGeometriques {
 
 	//global variable 
-	public final static int episseur = 5;
+	public static int EPAISSEUR = 5;
 	
 	private String Nom;
 	private Point origine;
@@ -68,9 +68,10 @@ public abstract class FormeGeometriques {
 	 * @param forme un object de type FormeGeometriques
 	 * @return true si egaux , false sinon 
 	 */
-	public Boolean equal ( FormeGeometriques forme) 
+	public Boolean equal (Object forme) 
 	{
-		if(this.superficie()==forme.superficie()) return true;
+	    if(forme == null) return false ;
+		if (this.superficie() == ((FormeGeometriques)forme).superficie()) return true;
 		else return false;
 	}
 	
